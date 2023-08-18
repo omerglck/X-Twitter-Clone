@@ -1,0 +1,52 @@
+$tw-blue: #1a8cd8;
+
+button {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 5px 20px;
+  transition: all 0.3s;
+}
+
+.auth-page {
+  background-color: rgb(30, 30, 30);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+.auth-page form {
+  min-width: 450px;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 80px;
+  border: 1px solid rgb(58, 58, 58);
+  border-radius: 10px;
+  gap: 50px;
+  div {
+    width: 100%;
+  }
+
+  img {
+    width: 80px;
+  }
+  button {
+    width: 100%;
+    background: $tw-blue;
+    color: white;
+    border-radius: 10px;
+    &:hover {
+      background: #1a8cd8a1;
+    }
+  }
+  .warning {
+    width: 100%;
+    background: #f8d7da;
+    padding: 5px 20px;
+    color: black;
+    border-radius: 5px;
+  }
+}
