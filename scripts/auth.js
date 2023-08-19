@@ -1,4 +1,8 @@
 import { authEle } from "./ui.js";
+import { API } from "./api.js";
+import { setLocal } from "./helpers.js";
+// class yapısını kullanabilmemiz için örneğini oluşturalım
+const api = new API();
 
 // Şifre için kuralları içeren tanım
 // min 1 lowercase letter
@@ -26,7 +30,7 @@ const renderWarns = (nameWarn, passWarn) => {
 };
 
 //* Formun gönderilme olayını izleme
-authEle.loginForm.addEventListener("submit", (e) => {
+authEle.loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   // uyarıları tutacağımız değişkenler
@@ -61,6 +65,10 @@ authEle.loginForm.addEventListener("submit", (e) => {
   renderWarns(nameWarn, passWarn);
   // Formu gönder
   if (!nameWarn && !passWarn) {
-    console.log("form gönderildi");
+    const userData = await api.getUser(name);
+    // Kullanıcıyı local'e ekler
+    setLocal("user", userData);
+    // Kullanıcıyı anasayfaya yönlendirme
+    window.location = "/";
   }
 });

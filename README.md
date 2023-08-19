@@ -7,3 +7,5 @@
 - Kullanıcı adı alanı doldurulmadığı zaman uyarı gönderildi.
 
 - Kullanıcının girdiği şifre kısa veya güçsüz ise uyarı gönderildi.
+
+- Anasayfa dizayn edildi ve API'dan aldığımız kullanıcı adı ve resmi anasayfa da render edildi.
