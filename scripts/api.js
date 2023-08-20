@@ -5,6 +5,7 @@ const options = {
     "X-RapidAPI-Host": "twitter-api45.p.rapidapi.com",
   },
 };
+const baseURL = "https://twitter-api45.p.rapidapi.com";
 
 export class API {
   constructor() {}
@@ -16,6 +17,21 @@ export class API {
         options
       );
       const data = res.json();
+      return data;
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  //diğer api
+  async fetchData(endpoint, paramName, paramValue) {
+    try {
+      // parametre olarak gelen linke
+      // yeni parametre olarak gelen url parametresine istek atma
+      const res = await fetch(
+        `${baseURL}${endpoint}?${paramName}=${paramValue}`,
+        options
+      );
+      const data = await res.json();
       return data;
     } catch (err) {
       console.log(err);

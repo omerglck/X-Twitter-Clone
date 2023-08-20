@@ -6,8 +6,18 @@
     @content;
   }
 }
+@mixin min-laptop {
+  @media (min-width: 1300px) {
+    @content;
+  }
+}
 @mixin tablet {
   @media (max-width: 1000px) {
+    @content;
+  }
+}
+@mixin min-tablet {
+  @media (min-width: 1000px) {
     @content;
   }
 }
@@ -23,7 +33,10 @@ $tw-blue: #1a8cd8;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   @include tablet() {
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 3fr;
+  }
+  @include min-tablet() {
+    grid-template-columns: 1fr 600px 1fr;
   }
 }
 
@@ -31,6 +44,10 @@ $tw-blue: #1a8cd8;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @include min-laptop() {
+    align-items: end;
+    margin-right: 40px;
+  }
   img {
     width: 80px;
     @include laptop() {
@@ -126,7 +143,17 @@ $tw-blue: #1a8cd8;
 }
 
 main {
+  overflow: auto;
+  height: 100vh;
   border: 1px solid rgb(66, 66, 66);
+  &::-webkit-scrollbar {
+    background: black;
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 10px;
+  }
   header {
     padding: 20px;
     font-weight: bold;
@@ -178,6 +205,76 @@ main {
   }
 }
 
+.tweetsArea {
+}
+.tweet {
+  display: flex;
+  padding: 10px;
+  gap: 15px;
+  border-bottom: 1px solid rgb(58, 58, 58);
+  &:hover {
+    background: rgb(41, 41, 41);
+  }
+  #user-img {
+    height: 40px;
+    border-radius: 50%;
+  }
+  .body {
+    width: 100%;
+    margin-top: 10px;
+    .user {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .info {
+        display: flex;
+        gap: 10px;
+      }
+      p {
+        color: gray;
+      }
+    }
+    .content {
+      text-decoration: none;
+      color: white;
+      img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        max-height: 300px;
+      }
+      video {
+        width: 100%;
+        border-radius: 10px;
+        max-height: 500px;
+      }
+    }
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      button {
+        background: none;
+        color: rgb(185, 185, 185);
+        border-radius: 10px;
+        &:hover {
+          background: rgb(59, 59, 59);
+        }
+      }
+    }
+  }
+}
+.info-area {
+  .top {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+}
+.tweet-info {
+  @extend .body;
+  flex-direction: column;
+}
 .news {
   @include tablet() {
     display: none;
