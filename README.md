@@ -10,6 +10,10 @@
 
 - Anasayfa dizayn edildi ve API'dan aldığımız kullanıcı adı ve resmi anasayfa da render edildi.
 
+- Anasayfa da tweetler listelendi.
+
+- Tweet detay alanı yapıldı.
+
 ## Kaynaklar
 
 API:https://rapidapi.com/alexanderxbx/api/twitter-api45/
