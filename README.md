@@ -1,18 +1,26 @@
 # X Clone
 
-## Yapılanlar
+### Özellikler
 
-- Giriş sayfası yapıldı.
+- RapidAPI kullanarak geliştirildi.
 
-- Kullanıcı adı alanı doldurulmadığı zaman uyarı gönderildi.
+- Renderlama, API'a istek atma vb. fonksiyonlar yeniden kullanılabilir şekilde geliştirildi ve kod tekrarının önüne geçildi.
 
-- Kullanıcının girdiği şifre kısa veya güçsüz ise uyarı gönderildi.
+- Kullanıcı adı ve şifre girilerek kullanıcın attığı tweetler ekrana aktarıldı.
 
-- Anasayfa dizayn edildi ve API'dan aldığımız kullanıcı adı ve resmi anasayfa da render edildi.
+- Kullanıcının girdiği kelime API'da aratılarak API'da bulunan veriler ekrana renderlandı.
 
-- Anasayfa da tweetler listelendi.
+- Tweet detay sayfası yapıldı.
 
-- Tweet detay alanı yapıldı.
+- Kullanıcı detay sayfası yapıldı.
+
+###
+
+- HTML
+
+- SCSS
+
+- JavaScript
 
 ## Kaynaklar
 
