@@ -14,6 +14,8 @@
 
 - Kullanıcı detay sayfası yapıldı.
 
+- <a href="https://x-clone0.netlify.app/">Canlı Önizleme</a>
+
 ###
 
 - HTML
